@@ -1,0 +1,5 @@
+com\tuling\user\web\UserController.class
+com\tuling\user\mapper\UserMapper.class
+com\tuling\user\service\UserService.class
+com\tuling\user\UserApplication.class
+com\tuling\user\pojo\User.class

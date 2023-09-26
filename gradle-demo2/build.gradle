@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+}
+
+group 'com.chenj'
+version '1.0-SNAPSHOT'
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/java']
+        }
+        resources {
+            srcDirs = ['src/resources']
+        }
+    }
+    test{
+        java {
+            srcDirs = ['src/test']
+        }
+        resources {
+            srcDirs = ['src/resources']
+        }
+    }
+}
+
+
+
+// 创建闭包
+//def createDir = {
+//    path ->
+//        File dir = new File(path)
+//        if(!dir.exists()){
+//            dir.mkdirs()
+//            //dir.delete()
+//        }
+//}
+//
+//// 创建任务
+//task makeJavaDir(){
+//    // 指定创建的目录结构
+//    def paths=['src/main/java', 'src/main/resources', 'src/test/java', 'src/test/resources']
+//
+//    // 在任务列表前添加一个任务
+//    doFirst {
+//        paths.forEach(createDir)
+//    }
+//}
+//
+//task show {
+//    println relativePath(compileJava.destinationDir)
+//    println relativePath(processResources.destinationDir)
+//}
+

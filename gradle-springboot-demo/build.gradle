@@ -1,0 +1,159 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.6.13'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.chenj'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+
+
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+
+//创建task
+//task("task1"){
+//    println "hello task!!!"
+//}
+//task hello{
+//    println "hello world"
+//}
+
+//task(hello2){
+//    println "hello world2"
+//}
+//
+//task ('hello3'){
+//    println "hello world3"
+//}
+
+//task speak{
+//    //task的配置阶段：配置阶段执行
+//    println("This is AA------->配置阶段!")
+//    //task的执行阶段：执行阶段执行
+//    doFirst {
+//        println("This is doFirst!------>inner ------>执行阶段")
+//    }
+//    doLast {
+//        println("This is doLast! ------>执行阶段")
+//    }
+//}
+//
+//speak.doFirst {
+//    println("This is doFirst!------>outer---------------->执行阶段")
+//}
+//speak.doLast{
+//    println("This is doLast!------>outer---------------->执行阶段")
+//}
+
+
+//ext {
+//    name = "AAA"
+//}
+//
+//def age = 18
+//
+//task s1 {
+//    doLast {
+//        age = 12
+//        rootProject.ext.name = "BBB"
+//        println("This is s1...")
+//    }
+//}
+//
+//task s2 {
+//    doLast {
+//        println("age --> " + age)
+//        println("name --> " + rootProject.ext.name)
+//        println("This is s2...")
+//    }
+//}
+
+//任务的依赖
+//task s1{
+//    doLast {
+//        println("This is s1...")
+//    }
+//}
+//
+//task s2{
+//    doLast {
+//        println("This is s2...")
+//    }
+//}
+//
+//s1.dependsOn s2
+
+//自定义task
+//class MyTask extends DefaultTask {
+//
+//    @TaskAction
+//    def ss1() {
+//        println("This is MyTask --> action1!")
+//    }
+//
+//    @TaskAction
+//    def ss2() {
+//        println("This is MyTask --> action2!")
+//    }
+//
+//    @TaskAction
+//    def ss3() {
+//        println("This is MyTask --> action3!")
+//    }
+//
+//}
+//
+//task speak(type: MyTask) {
+//    println("This is AA!")
+//    doFirst {
+//        println("This is doFirst!")
+//    }
+//    doLast {
+//        println("This is doLast!")
+//    }
+//}
+
+
+defaultTasks 'cleanTask', 'runTask'
+
+task cleanTask {
+    doLast {
+        println 'Default Cleaning!'
+    }
+}
+
+task runTask {
+    doLast {
+        println 'Default Running!'
+    }
+}
+
+task otherTask {
+    doLast {
+        println "I'm not a default task!"
+    }
+}

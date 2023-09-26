@@ -1,0 +1,7 @@
+com\tuling\order\OrderApplication.class
+com\tuling\order\pojo\Order.class
+com\tuling\order\web\OrderController.class
+com\tuling\order\service\OrderService.class
+com\tuling\order\mapper\OrderMapper.class
+com\tuling\order\clients\UserClient.class
+com\tuling\order\pojo\User.class
